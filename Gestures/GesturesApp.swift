@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct GesturesApp: App {
+    @StateObject private var viewModel = SymbolViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(viewModel)
         }
     }
 }

@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct SymbolsGridView: View {
-    @StateObject private var viewModel = SymbolViewModel()
-    
+    @EnvironmentObject var viewModel: SymbolViewModel
     let columns = [
         GridItem(.adaptive(minimum: 80))
     ]
@@ -21,12 +20,13 @@ struct SymbolsGridView: View {
                                     .frame(width: 50, height: 50)
                                     .foregroundColor(viewModel.symbols[index].color)
                                 
-                                Button(action: {
-                                    viewModel.toggleFavorite(for: viewModel.symbols[index])
-                                }) {
+                                
                                     Image(systemName: viewModel.symbols[index].isFavorite ? "heart.fill" : "heart")
                                         .foregroundColor(viewModel.symbols[index].isFavorite ? .red : .gray)
-                                }
+                                        .onTapGesture {
+                                            viewModel.toggleFavorite(for: viewModel.symbols[index])
+                                        }
+                                
                             }
                         }
                     }
