@@ -7,6 +7,7 @@ struct SymbolsGridView: View {
         GridItem(.adaptive(minimum: 80))
     ]
     
+    
     var body: some View {
         NavigationView {
             ScrollView {
