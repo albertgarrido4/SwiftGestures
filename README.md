@@ -1,6 +1,4 @@
 * * * * *
-**📌 README.md para tu Proyecto**
----------------------------------
 
 ```
 # 🎨 GesturesApp - SF Symbols Grid
